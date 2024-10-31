@@ -1,0 +1,171 @@
+/* Navbar styling */
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10%; /* Thinner padding */
+  z-index: 2;
+  margin: 0 10%;
+}
+
+.title {
+  font-size: 20px; /* Reduced font size */
+  font-weight: 600;
+  text-decoration: none;
+  color: #73b72c;
+}
+
+.span {
+  color: var(--orange-color); /* Use your orange color */
+  font-size: 10px;
+  font-weight: 100;
+}
+
+.spanr {
+  color: var(--orange-color); /* Use your orange color */
+  font-size: 25px; /* Reduced font size */
+  font-weight: 600;
+}
+
+/* Menu section */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.menuItems {
+  display: flex;
+  list-style: none;
+  gap: 30px; /* Adjust spacing for thinner navbar */
+  margin: 0;
+  padding: 0;
+}
+
+.menuOpen {
+  display: block;
+}
+
+.menuItems a {
+  font-size: 18px; /* Reduced font size */
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+/* Social Media Icons */
+.socialIcons {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Sign Up Button */
+.signUpButton {
+  background-color: #73b72c; /* Custom green */
+  color: white;
+  border-radius: 15px;
+  padding: 8px 16px;
+  cursor: pointer;
+  border: none;
+  margin-left: 20px;
+  font-weight: 600;
+}
+
+/* Mobile Menu Button */
+.menuBtn {
+  display: block;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 830px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu {
+    position: absolute;
+    right: 0;
+    margin-right: 10%;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 11px;
+    z-index: 3;
+  }
+
+  .menuBtn {
+    display: block;
+  }
+
+  .menuItems {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+    border-radius: 10px;
+    background: rgb(25, 55, 109);
+    background: linear-gradient(
+      0deg,
+      rgba(25, 55, 109, 0.2) 0%,
+      rgba(25, 55, 109, 1) 100%
+    );
+    padding: 24px 33px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  .menuOpen {
+    display: flex;
+    z-index: 1;
+  }
+}
+
+/* Modal Overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modalContent {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+/* Close Button */
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Error Message */
+.error {
+  color: red;
+  margin-bottom: 10px;
+}

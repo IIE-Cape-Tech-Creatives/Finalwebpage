@@ -1,0 +1,159 @@
+.container {
+  position: relative;
+  background-color: rgb(5, 4, 4);
+  border-radius: 15px;
+  padding: 73px;
+  margin-top: 1%;
+  z-index: 1;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  color: var(--color-text);
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 1.75px;
+  text-align: center;
+}
+
+.title2 {
+  color: #73b72c;
+  font-size: 35px;
+  font-weight: bold;
+  letter-spacing: 1.75px;
+  text-align: center;
+}
+
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.aboutImage {
+  width: 50%; /* Adjust width as needed */
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.scrollableListContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%; /* Span full width of the container */
+  margin-top: 20px;
+  position: relative;
+}
+
+.scrollButton {
+  background-color: #73b72c;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  position: absolute;
+  z-index: 1;
+}
+
+.scrollButton:hover {
+  background-color: #5c8e22;
+}
+
+/* Position left and right scroll buttons */
+.scrollButton:first-of-type {
+  left: 0;
+}
+
+.scrollButton:last-of-type {
+  right: 0;
+}
+
+.aboutItems {
+  color: var(--color-text);
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  overflow-x: auto;
+  padding: 0 10px;
+  scrollbar-width: thin;
+  scrollbar-color: #73b72c transparent; /* Custom scrollbar colors */
+  width: 100%; /* Full width for scrolling items */
+  padding: 0 40px; /* Add padding to align with container edges */
+}
+
+.aboutItems::-webkit-scrollbar {
+  height: 8px;
+}
+
+.aboutItems::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.aboutItems::-webkit-scrollbar-thumb {
+  background-color: #73b72c;
+  border-radius: 20px;
+}
+
+.aboutItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  list-style: none;
+  padding: 20px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(165, 215, 232, 0.42) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  transition: 0.4s;
+  max-width: 250px;
+  flex-shrink: 0; /* Prevents items from shrinking */
+}
+
+.aboutItem:hover {
+  background-size: 100% 100%;
+}
+
+.aboutItem h3 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #73b72c;
+}
+
+.aboutItem p {
+  font-size: 18px;
+  text-align: center;
+}
+
+@media screen and (max-width: 830px) {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .aboutImage {
+    width: 70%; /* Adjusted for smaller screens */
+  }
+
+  .aboutItems {
+    margin-top: 15px;
+  }
+
+  .aboutItem {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

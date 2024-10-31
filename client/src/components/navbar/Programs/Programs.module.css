@@ -1,0 +1,169 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+    text-align: center;
+  }
+  
+  .headingContainer {
+    margin-bottom: 40px;
+  }
+  
+  .heading {
+    font-size: 36px;
+    color: #73b72c; /* Light green for the main title */
+    font-weight: bold;
+  }
+  
+  .subheading {
+    font-size: 28px;
+    color: #333;
+    margin-top: -10px; /* Pull subheading closer to the main heading */
+  }
+  
+  .description {
+    font-size: 18px;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .programsContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .programBoxGreen, .programBoxBlack {
+    flex: 1;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .programBoxGreen {
+    background-color: #73b72c; /* Light green background */
+    color: white;
+  }
+  
+  .programBoxBlack {
+    background-color: #333; /* Black background */
+    color: white;
+  }
+  
+  .programBoxGreen h3, .programBoxBlack h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .programBoxBlack h3{
+    color: #73b72c;
+  }
+
+  .programBoxGreen h2, .programBoxBlack h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .programBoxGreen h2{
+    color: #333;
+  }
+
+  
+  .programBoxGreen p, .programBoxBlack p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .ctaButton {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .ctaButton:hover {
+    background-color: #f0f0f0;
+  }
+  
+  @media screen and (max-width: 830px) {
+    .programsContainer {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .programBoxGreen, .programBoxBlack {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modalContent {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .modalContent h2 {
+    margin-bottom: 20px;
+  }
+  
+  .modalContent label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .modalContent input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .modalContent button {
+    background-color: #73b72c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modalContent button:hover {
+    background-color: #5d9b24;
+  }
+  
+  .successMessage p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
