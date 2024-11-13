@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./UpdatesAndInsights.module.css";
-import { getImageUrl } from "../../../utils"
+import { getImageUrl } from "../../../utils";
 
 export const UpdatesAndInsights = () => {
   return (
@@ -14,8 +14,18 @@ export const UpdatesAndInsights = () => {
         <div className={styles.imageContainer}>
           <img
             className={styles.image}
-            src={getImageUrl("events/event3.jpeg")}
+            src={getImageUrl("events/event1.jpg")}
             alt="Community Support"
+          />
+          <img
+            className={styles.image}
+            src={getImageUrl("events/event2.jpg")}
+            alt="Health Programs"
+          />
+          <img
+            className={styles.image}
+            src={getImageUrl("events/event3.jpeg")}
+            alt="Elderly Fitness"
           />
         </div>
 
@@ -34,3 +44,5 @@ export const UpdatesAndInsights = () => {
     </section>
   );
 };
+
+export default UpdatesAndInsights;
