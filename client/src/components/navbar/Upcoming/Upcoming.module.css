@@ -1,17 +1,16 @@
+/* Main container */
 .container {
   position: relative;
   background-color: rgb(33, 34, 32);
   border-radius: 15px;
-  padding: 73px;
-  margin-top: 1%;
-  z-index: 1;
-  margin-left: 5%;
-  margin-right: 5%;
+  padding: 50px;
+  margin: 1% 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Titles */
 .title {
   color: var(--color-text);
   font-size: 26px;
@@ -28,132 +27,117 @@
   text-align: center;
 }
 
-.imageContainer {
+/* Wrapper for image and list */
+.contentWrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
-  max-width: 800px;
+  margin-top: 20px;
 }
 
-.aboutImage {
-  width: 50%; /* Adjust width as needed */
-  border-radius: 15px;
-  margin-bottom: 20px;
-}
-
-.scrollableListContainer {
+/* Image on the left */
+.imageContainer {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  max-width: 100%; /* Span full width of the container */
-  margin-top: 20px;
-  position: relative;
+  padding: 20px;
 }
 
-.scrollButton {
-  background-color: #73b72c;
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 20px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-  position: absolute;
-  z-index: 1;
+.aboutImage {
+  width: 80%; /* Adjust the size as needed */
+  max-width: 400px;
+  border-radius: 15px;
 }
 
-.scrollButton:hover {
-  background-color: #5c8e22;
-}
-
-/* Position left and right scroll buttons */
-.scrollButton:first-of-type {
-  left: 0;
-}
-
-.scrollButton:last-of-type {
-  right: 0;
-}
-
-.aboutItems {
-  color: var(--color-text);
+/* Events list on the right */
+.eventsList {
+  flex: 2;
   display: flex;
-  flex-direction: row;
-  gap: 30px;
-  overflow-x: auto;
-  padding: 0 10px;
-  scrollbar-width: thin;
-  scrollbar-color: #73b72c transparent; /* Custom scrollbar colors */
-  width: 100%; /* Full width for scrolling items */
-  padding: 0 40px; /* Add padding to align with container edges */
+  flex-direction: column;
+  max-height: 400px; /* Limit height for vertical scroll */
+  overflow-y: auto; /* Vertical scrolling */
+  margin-left: 20px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle background */
+  border-radius: 15px;
 }
 
-.aboutItems::-webkit-scrollbar {
-  height: 8px;
+/* Individual event item */
+.eventItem {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-.aboutItems::-webkit-scrollbar-track {
+.eventItem:hover {
+  background-color: rgba(115, 183, 44, 0.8);
+ 
+}
+
+.eventItem:hover h3 {
+  color: black;
+ 
+}
+
+.eventItem h3 {
+  color: #73b72c;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.eventItem h3:hover {
+  color: black;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.eventItem h4 {
+  color: white;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.eventItem p {
+  color: #ddd;
+  font-size: 16px;
+}
+
+/* Add scrollbar styling */
+.eventsList::-webkit-scrollbar {
+  width: 8px;
+}
+
+.eventsList::-webkit-scrollbar-thumb {
+  background-color: #73b72c;
+  border-radius: 10px;
+}
+
+.eventsList::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.aboutItems::-webkit-scrollbar-thumb {
-  background-color: #73b72c;
-  border-radius: 20px;
-}
-
-.aboutItem {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 15px;
-  list-style: none;
-  padding: 20px;
-  background-image: linear-gradient(
-    90deg,
-    rgba(165, 215, 232, 0.42) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  background-size: 0 100%;
-  background-repeat: no-repeat;
-  transition: 0.4s;
-  max-width: 250px;
-  flex-shrink: 0; /* Prevents items from shrinking */
-}
-
-.aboutItem:hover {
-  background-size: 100% 100%;
-}
-
-.aboutItem h3 {
-  font-size: 20px;
-  font-weight: 400;
-  color: #73b72c;
-}
-
-.aboutItem p {
-  font-size: 18px;
-  text-align: center;
-}
-
+/* Mobile Responsiveness */
 @media screen and (max-width: 830px) {
-  .container {
-    padding-left: 0;
-    padding-right: 0;
+  .contentWrapper {
+    flex-direction: column;
   }
 
+  .imageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px; /* Fixed width */
+    height: 300px; /* Fixed height */
+    border-radius: 15px;
+    overflow: hidden; /* Ensure images don’t overflow */
+    background-color: #f5f5f5; /* Placeholder background color */
+  }
+  
   .aboutImage {
-    width: 70%; /* Adjusted for smaller screens */
-  }
-
-  .aboutItems {
-    margin-top: 15px;
-  }
-
-  .aboutItem {
-    padding-left: 10px;
-    padding-right: 10px;
+    max-width: 100%; /* Image adjusts to container width */
+    max-height: 100%; /* Image adjusts to container height */
+    object-fit: cover; /* Ensures image covers the container while preserving aspect ratio */
   }
 }

@@ -1,11 +1,44 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Upcoming.module.css";
 import { getImageUrl } from "../../../utils";
 
 export const Upcoming = () => {
   const [posts, setPosts] = useState([]); // Store posts from the database
   const [selectedPost, setSelectedPost] = useState(null);
-  const eventsListRef = useRef(null); // Reference to the list container
+
+  // Fallback similar events
+  const fallbackPosts = [
+    {
+      date: "2024-11-25",
+      eventName: "Community Eye Care Camp",
+      description: "Join us for free eye checkups and consultations.",
+      image: getImageUrl("events/eye-care.jpg"),
+    },
+    {
+      date: "2024-12-01",
+      eventName: "Therapy Group Session",
+      description: "Participate in a group therapy session to improve mental health.",
+      image: getImageUrl("events/group-therapy.jpg"),
+    },
+    {
+      date: "2024-12-05",
+      eventName: "Volunteer Appreciation Night",
+      description: "An evening to celebrate and thank our wonderful volunteers.",
+      image: getImageUrl("events/volunteer-night.jpg"),
+    },
+    {
+      date: "2024-12-10",
+      eventName: "Youth Empowerment Workshop",
+      description: "Workshops focused on career guidance and self-development.",
+      image: getImageUrl("events/youth-workshop.jpg"),
+    },
+    {
+      date: "2024-12-15",
+      eventName: "Holiday Giving Drive",
+      description: "Help us spread joy this holiday season by donating essentials.",
+      image: getImageUrl("events/holiday-drive.jpg"),
+    },
+  ];
 
   // Fetch posts from the database/API
   useEffect(() => {
@@ -13,14 +46,14 @@ export const Upcoming = () => {
       try {
         const response = await fetch("http://localhost:8080/"); // Replace with your server URL if needed
         const data = await response.json();
-        // Ensure date is formatted correctly for display
-        const formattedPosts = data.map(post => ({
+        const formattedPosts = data.map((post) => ({
           ...post,
           date: new Date(post.date).toLocaleDateString(), // Format date for better display
         }));
-        setPosts(formattedPosts); // Assuming the data is an array of posts
+        setPosts(formattedPosts.length > 0 ? formattedPosts : fallbackPosts);
       } catch (error) {
         console.error("Error fetching posts:", error);
+        setPosts(fallbackPosts); // Use fallback posts in case of an error
       }
     };
 
@@ -32,47 +65,36 @@ export const Upcoming = () => {
     return selectedPost ? selectedPost.image : getImageUrl("events/event.jpeg"); // Default placeholder image
   };
 
-  // Scroll left/right functions
-  const scrollLeft = () => {
-    if (eventsListRef.current) {
-      eventsListRef.current.scrollBy({ left: -100, behavior: "smooth" });
-    }
-  };
-
-  const scrollRight = () => {
-    if (eventsListRef.current) {
-      eventsListRef.current.scrollBy({ left: 100, behavior: "smooth" });
-    }
-  };
-
   return (
     <section className={styles.container} id="upcoming-events">
       <h2 className={styles.title2}>Izinhlelo Ezizayo</h2>
       <h2 className={styles.title}>Upcoming Events</h2>
       
-      <div className={styles.imageContainer}>
-        {/* Image that updates based on selected event */}
-        <img
-          src={getEventImage()}
-          alt="Event display"
-          className={styles.aboutImage}
-        />
+      <div className={styles.contentWrapper}>
+        {/* Image on the left */}
+        <div className={styles.imageContainer}>
+          <img
+            src={getEventImage()}
+            alt="Event display"
+            className={styles.aboutImage}
+          />
+        </div>
 
-        {/* Event list with scroll buttons */}
-        <div className={styles.scrollableListContainer}>
-          <button className={styles.scrollButton} onClick={scrollLeft}>◀</button>
-          
-          <ul className={styles.aboutItems} ref={eventsListRef}>
+        {/* Events list on the right */}
+        <div className={styles.eventsList}>
+          <ul>
             {posts.map((post, index) => (
-              <li key={index} className={styles.aboutItem} onClick={() => setSelectedPost(post)}>
+              <li
+                key={index}
+                className={styles.eventItem}
+                onClick={() => setSelectedPost(post)}
+              >
                 <h3>{post.date}</h3>
-                <p>{post.eventName}</p>
+                <h4>{post.eventName}</h4>
                 <p>{post.description}</p>
               </li>
             ))}
           </ul>
-          
-          <button className={styles.scrollButton} onClick={scrollRight}>▶</button>
         </div>
       </div>
     </section>
