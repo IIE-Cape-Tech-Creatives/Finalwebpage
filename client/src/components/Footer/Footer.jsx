@@ -19,8 +19,7 @@ export const Footer = () => {
         <div className={styles.mapContainer}>
           <iframe
             className={styles.map}
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115344.60603212377!2d28.014269167703663!3d-26.204102280275682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950b84c5f020b9%3A0x54820b0bc55e1e29!2sJohannesburg%2C%20South%20Africa!5e0!3m2!1sen!2sus!4v1689036499982!5m2!1sen!2sus"
-            title="Google Maps Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115344.60603212377!2d31.021840!3d-29.858680!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9516f57e0e7b27%3A0x54820b0bc55e1e29!2sDurban%2C%20KwaZulu-Natal%2C%20South%20Africa!5e0!3m2!1sen!2sus!4v1689036499982!5m2!1sen!2sus"            title="Google Maps Location"
             allowFullScreen=""
             loading="lazy"
           ></iframe>

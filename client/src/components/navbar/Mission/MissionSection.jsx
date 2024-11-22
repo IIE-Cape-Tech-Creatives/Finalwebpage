@@ -4,7 +4,7 @@ import { getImageUrl } from "../../../utils";
 
 export const MissionSection = () => {
     return (
-        <section className={styles.missionSection}>
+        <section className={styles.missionSection} id="mission">
             <h2 className={styles.title}>PHUMLANI DUBE FOUNDATION</h2>
             <p className={styles.subtitle}>Empowering Lives through Active Lifestyles and Accessible Healthcare</p>
             

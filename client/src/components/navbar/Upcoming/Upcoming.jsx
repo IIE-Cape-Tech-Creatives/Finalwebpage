@@ -66,7 +66,7 @@ export const Upcoming = () => {
   };
 
   return (
-    <section className={styles.container} id="upcoming-events">
+    <section className={styles.container} id="events">
       <h2 className={styles.title2}>Izinhlelo Ezizayo</h2>
       <h2 className={styles.title}>Upcoming Events</h2>
       

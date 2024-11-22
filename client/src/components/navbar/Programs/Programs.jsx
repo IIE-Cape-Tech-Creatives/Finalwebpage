@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Programs.module.css";
 
-const Modal = ({ onClose, onFormSubmit }) => {
+const Modal = ({ onClose, onFormSubmit, programName, programDescription }) => {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [phone, setPhone] = useState("");
@@ -16,38 +16,45 @@ const Modal = ({ onClose, onFormSubmit }) => {
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalContent}>
+        <button className={styles.closeButton} onClick={onClose}>
+          ✕
+        </button>
         {!isSubmitted ? (
-          <form onSubmit={handleSubmit}>
-            <h2>Enter Your Details</h2>
-            <label>
-              Name:
-              <input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-            </label>
-            <label>
-              Surname:
-              <input
-                type="text"
-                value={surname}
-                onChange={(e) => setSurname(e.target.value)}
-                required
-              />
-            </label>
-            <label>
-              Phone Number:
-              <input
-                type="tel"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                required
-              />
-            </label>
-            <button type="submit">Submit</button>
-          </form>
+          <div>
+            <h2 className={styles.modalTitle}>{programName}</h2>
+            <p className={styles.modalDescription}>{programDescription}</p>
+            <form onSubmit={handleSubmit} className={styles.modalForm}>
+              <h3>Enter Your Details to Sign Up</h3>
+              <label>
+                Name:
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+              </label>
+              <label>
+                Surname:
+                <input
+                  type="text"
+                  value={surname}
+                  onChange={(e) => setSurname(e.target.value)}
+                  required
+                />
+              </label>
+              <label>
+                Phone Number:
+                <input
+                  type="tel"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  required
+                />
+              </label>
+              <button type="submit">Submit</button>
+            </form>
+          </div>
         ) : (
           <div className={styles.successMessage}>
             <p>Thank you! Your details have been submitted successfully.</p>
@@ -61,8 +68,35 @@ const Modal = ({ onClose, onFormSubmit }) => {
 
 export const Programs = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProgram, setSelectedProgram] = useState({});
 
-  const openModal = () => setIsModalOpen(true);
+  const programs = [
+    {
+      id: 1,
+      name: "Eye Clinic",
+      localName: "Umtholampilo Wamehlo",
+      description: "We provide free eye testing and treatments to the community.",
+    },
+    {
+      id: 2,
+      name: "Fitness Class",
+      localName: "Isifundo Sokuzivocavoca",
+      description: "Join us in staying active and healthy as a community.",
+    },
+    {
+      id: 3,
+      name: "Police Assistance",
+      localName: "Usizo Lwamaphoyisa",
+      description:
+        "We work together with local police to keep our community safe and united.",
+    },
+  ];
+
+  const openModal = (program) => {
+    setSelectedProgram(program);
+    setIsModalOpen(true);
+  };
+
   const closeModal = () => setIsModalOpen(false);
 
   const handleFormSubmit = (formData) => {
@@ -70,40 +104,46 @@ export const Programs = () => {
   };
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="services">
       <div className={styles.headingContainer}>
         <h2 className={styles.heading}>Izinhlelo</h2>
         <p className={styles.subheading}>Programs</p>
         <p className={styles.description}>
-          We have a wide variety of programs we offer to our community and accept all volunteers for anyone interested in supporting us.
+          We have a wide variety of programs we offer to our community and
+          accept all volunteers for anyone interested in supporting us.
         </p>
       </div>
 
       <div className={styles.programsContainer}>
-        <div className={styles.programBoxGreen}>
-          <h3>Umtholampilo Wamehlo</h3>
-          <h2>Eye Clinic</h2>
-          <p>Free eye testing and clinic available</p>
-          <button className={styles.ctaButton} onClick={openModal}>Book Now</button>
-        </div>
-
-        <div className={styles.programBoxBlack}>
-          <h3>Isifundo Sokuzivocavoca</h3>
-          <h2>Fitness Class</h2>
-          <p>Stay active as a community with us</p>
-          <button className={styles.ctaButton} onClick={openModal}>Book Now</button>
-        </div>
-
-        <div className={styles.programBoxGreen}>
-          <h3>Usizo Lwamaphoyisa</h3>
-          <h2>Police Assistance</h2>
-          <p>Help us keep our community safe and keep our members united</p>
-          <button className={styles.ctaButton} onClick={openModal}>Book Now</button>
-        </div>
+        {programs.map((program) => (
+          <div
+            className={
+              program.id % 2 === 0
+                ? styles.programBoxBlack
+                : styles.programBoxGreen
+            }
+            key={program.id}
+          >
+            <h3>{program.localName}</h3>
+            <h2>{program.name}</h2>
+            <p>{program.description}</p>
+            <button
+              className={styles.ctaButton}
+              onClick={() => openModal(program)}
+            >
+              Book Now
+            </button>
+          </div>
+        ))}
       </div>
 
       {isModalOpen && (
-        <Modal onClose={closeModal} onFormSubmit={handleFormSubmit} />
+        <Modal
+          onClose={closeModal}
+          onFormSubmit={handleFormSubmit}
+          programName={selectedProgram.name}
+          programDescription={selectedProgram.description}
+        />
       )}
     </section>
   );

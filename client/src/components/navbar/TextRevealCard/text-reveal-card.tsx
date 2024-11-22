@@ -24,7 +24,7 @@ export const TextRevealCard = () => {
           onClick={() => scrollToSection("events")}
           className="hidden group-hover:block bg-[#73b72c] text-white px-6 py-2 rounded transition-opacity duration-300"
         >
-          Learn More
+          View
         </button>
       </div>
 
@@ -61,7 +61,7 @@ export const TextRevealCard = () => {
       {/* Button Section */}
       <div className="flex-1 m-1 rounded flex flex-col justify-center items-center p-4">
         <button
-          onClick={() => scrollToSection("start")}
+          onClick={() => scrollToSection("mission")}
           style={{ backgroundColor: "#73b72c" }}
           className="text-white px-6 py-2 rounded-full hover:bg-green-600"
         >

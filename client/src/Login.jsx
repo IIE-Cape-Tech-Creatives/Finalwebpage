@@ -10,6 +10,7 @@ import { Programs } from './components/navbar/Programs/Programs'
 import { ContactSection } from './components/navbar/contact/ContactSection'
 import { MissionSection } from './components/navbar/Mission/MissionSection'
 import { Footer } from './components/Footer/Footer'
+import {SupportersSection } from './components/navbar/Supporters/SupportersSection'
 import './App.css';
 
 const Login = ({ onLogin }) => {
@@ -51,41 +52,11 @@ const Login = ({ onLogin }) => {
             <Experience />
             <UpdatesAndInsights />
             <Programs/>
+            <SupportersSection />
             <ContactSection/>
             <Footer />
 
-            <div className="login-container">
-                <button className="admin-login-button" onClick={handleAdminLoginClick}>Admin Login</button>
-
-                {isModalOpen && (
-                    <div className="modal-overlay">
-                        <div className="modal-content">
-                            <button className="close-button" onClick={closeModal}>×</button>
-                            <h2>Admin Login</h2>
-                            {error && <p className="error">{error}</p>}
-                            <form onSubmit={handleSubmit}>
-                                <input
-                                    type="text"
-                                    name="username"
-                                    placeholder="Username"
-                                    value={credentials.username}
-                                    onChange={handleChange}
-                                    required
-                                />
-                                <input
-                                    type="password"
-                                    name="password"
-                                    placeholder="Password"
-                                    value={credentials.password}
-                                    onChange={handleChange}
-                                    required
-                                />
-                                <button type="submit">Login</button>
-                            </form>
-                        </div>
-                    </div>
-                )}
-            </div>
+           
         </div>
     );
 };
