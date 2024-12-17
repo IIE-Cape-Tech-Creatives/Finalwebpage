@@ -1,80 +1,29 @@
-import React, { useState } from "react";
-import axios from 'axios';
+import React from "react";
 import styles from "./Navbar.module.css";
-import { getImageUrl } from "../../utils";
+import { getImageUrl } from "./././../../utils"
 
 export const Navbar = () => {
-    const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-    const [credentials, setCredentials] = useState({ username: '', password: '' });
-    const [error, setError] = useState('');
+  return (
+    <nav className={styles.navbar}>
+      {/* Logo and Name */}
+      <a href="/" className={styles.logo}>
+        <img
+           src={getImageUrl("hero/logo (3).png")} 
+          alt="Logo"
+          className={styles.logoImage}
+        />
+        <span className={styles.logoText}>Phumlani Dube Foundation</span>
+      </a>
 
-    const handleLoginClick = () => setIsLoginModalOpen(true);
-    const closeModal = () => setIsLoginModalOpen(false);
+      {/* Navigation Links */}
+      <ul className={styles.navLinks}>
+        <li><a href="/about-us">About Us</a></li>
+        <li><a href="/our-services">Our Services</a></li>
+        <li><a href="/get-involved">Get Involved</a></li>
+      </ul>
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setCredentials({ ...credentials, [name]: value });
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await axios.post('http://localhost:8080/login', credentials);
-            if (response.status === 200) {
-                closeModal();  // Close modal on successful login
-                // Optionally handle login state if needed
-            }
-        } catch (err) {
-            setError(err.response?.data.message || 'Something went wrong');
-        }
-    };
-
-    return (
-        <nav className={styles.navbar}>
-            <a className={styles.title} href="/">
-                Phumlani Dube Foundation
-            </a>
-
-            <div className={styles.menu}>
-                <div className={styles.socialIcons}>
-                    <img src={getImageUrl("icons/facebook.png")} alt="Facebook" className={styles.icon} />
-                    <img src={getImageUrl("icons/gmail.png")} alt="Gmail" className={styles.icon} />
-                    <img src={getImageUrl("icons/youtube.png")} alt="YouTube" className={styles.icon} />
-                </div>
-
-                {/* Sign Up and Login Buttons */}
-               
-            </div>
-
-            {/* Login Modal */}
-            {isLoginModalOpen && (
-                <div className={styles.modalOverlay}>
-                    <div className={styles.modalContent}>
-                        <button className={styles.closeButton} onClick={closeModal}>×</button>
-                        <h2>Login</h2>
-                        {error && <p className={styles.error}>{error}</p>}
-                        <form onSubmit={handleSubmit}>
-                            <input
-                                type="text"
-                                name="username"
-                                placeholder="Username"
-                                value={credentials.username}
-                                onChange={handleChange}
-                                required
-                            />
-                            <input
-                                type="password"
-                                name="password"
-                                placeholder="Password"
-                                value={credentials.password}
-                                onChange={handleChange}
-                                required
-                            />
-                            <button type="submit">Login</button>
-                        </form>
-                    </div>
-                </div>
-            )}
-        </nav>
-    );
+      {/* Donate Button */}
+      <button className={styles.donateButton}>Donate</button>
+    </nav>
+  );
 };

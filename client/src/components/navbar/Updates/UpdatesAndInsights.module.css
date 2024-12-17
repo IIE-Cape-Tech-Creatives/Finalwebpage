@@ -20,12 +20,15 @@
   .heading {
     font-size: 36px;
     color: #73b72c; /* Green color matching the border */
-    font-weight: bold;
+   
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
   }
   
   .subheading {
     font-size: 28px;
     color: #333;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   
   .content {

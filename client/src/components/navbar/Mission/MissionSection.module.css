@@ -1,24 +1,29 @@
 .missionSection {
     text-align: center;
+    width: 80%;
+    margin: 0 auto;
     padding: 40px;
-    margin: 5%;
-    background-color: #f9f9f9;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid #73b72c;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
+.mainSection {
+    background: url('./../../../../assets/hero/homeback.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
 .title {
     font-size: 30px;
     font-weight: bold;
     color: #333;
     margin-bottom: 16px;
-}
-
-.subtitle {
-    font-size: 20px;
-    font-weight: 500;
-    color: #666;
-    margin-bottom: 30px;
 }
 
 .content {
@@ -34,33 +39,90 @@
     margin-bottom: 20px;
 }
 
+.subtitle {
+    font-size: 20px;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.introSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.missionImage {
+    max-width: 100%;
+    width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+}
+
+.getToKnowButton {
+    background-color: #6abf4b;
+    color: white;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.getToKnowButton:hover {
+    background-color: #5aa63b;
+}
+
 .servicesTitle {
-    font-size: 24px;
-    font-weight: bold;
+    color: #73b72c;
+    font-size: 35px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   
+    margin-top: 1%;
+}
+
+.servicesTitle2 {
     color: #333;
+    font-size: 28px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 30px 0 20px;
 }
 
-.missionItems {
+.serviceCards {
     display: flex;
     justify-content: center;
-    gap: 30px; /* Reduced spacing between items */
-    margin-bottom: 24px;
+    gap: 30px;
+    flex-wrap: wrap; 
+    margin-bottom: -210px;
 }
 
-.missionItem {
+.serviceCard {
     text-align: center;
-    max-width: 250px; /* Allow slightly larger images */
+    max-width: 300px;
+    padding: 20px;
+    
+    background: #e2f7d3;
+    border: 1px solid #73b72c;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.serviceCard:hover {
+    transform: scale(1.03); /* Enlarge on hover */
 }
 
 .imageCarousel {
     position: relative;
-    width: 200px; /* Larger width for images */
-    height: 200px; /* Larger height for images */
-    margin: 0 auto 12px;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 16px;
     overflow: hidden;
-    border-radius: 12px; /* Subtle rounded corners */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .carouselImage {
@@ -69,7 +131,7 @@
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    animation: carouselAnimation 9s infinite ease-in-out; /* Subtle fade effect */
+    animation: carouselAnimation 9s infinite ease-in;
 }
 
 .carouselImage:nth-child(1) {
@@ -85,31 +147,46 @@
 }
 
 @keyframes carouselAnimation {
-    0%, 25% {
+    0%, 35% {
         opacity: 1;
     }
-    30%, 100% {
+    60%, 100% {
         opacity: 0;
     }
 }
 
-.description {
+.serviceTitleBlack {
     font-size: 18px;
-    color: #444;
-    margin-top: 8px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
 }
 
-.button {
+.serviceTitleGreen {
+    font-size: 16px;
+    font-weight: bold;
+    color: #6abf4b;
+    margin-bottom: 8px;
+}
+
+.serviceDescription {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 16px;
+}
+
+.serviceButton {
     background-color: #6abf4b;
     color: white;
-    padding: 12px 32px;
+    padding: 10px 24px;
     border: none;
     border-radius: 6px;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-.button:hover {
+.serviceButton:hover {
     background-color: #5aa63b;
 }

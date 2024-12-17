@@ -1,0 +1,76 @@
+/* Card Container */
+.landingCard {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  border: 0.8px solid #73b72c;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  padding: 20px 30px;
+}
+
+/* Card Links */
+.cardLink {
+  text-decoration: none; /* Remove underline from links */
+  flex: 1; /* Ensure cards take equal space */
+  border-right: 1px solid #ddd; /* Add thin line between cards */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+/* Remove last border */
+.cardLink:last-child {
+  border-right: none;
+}
+
+/* Hover Effect */
+.cardLink:hover {
+  transform: scale(1.01); /* Slightly enlarge the card on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+/* Each Card Item */
+.cardItem {
+  text-align: center;
+  padding: 5px;
+}
+
+.cardItem h3 {
+  color: #6abf4b;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.cardItem h4 {
+  color: #333;
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+.cardItem p {
+  color: #555;
+  font-size: 0.8rem;
+}
+
+/* Explore Button */
+.exploreButton {
+  margin-top: 20px;
+  margin-left: 5px;
+  background-color: #6abf4b;
+  color: white;
+  padding: 10px  20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.exploreButton:hover {
+  background-color: #5aa63b;
+}

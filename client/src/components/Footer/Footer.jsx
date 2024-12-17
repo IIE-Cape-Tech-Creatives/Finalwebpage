@@ -1,35 +1,65 @@
 import React from "react";
 import styles from "./Footer.module.css";
-
+import { getImageUrl } from "./././../../utils"
 export const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <div className={styles.footerContent}>
-        {/* Address Section */}
-        <div className={styles.addressContainer}>
-          <p className={styles.addressTitle}>Our Location</p>
-          <p className={styles.address}>
-            123 Freedom Street, <br />
-            Durban, <br />
-            South Africa
-          </p>
+      <div className={styles.footerContainer}>
+        {/* Contact Section */}
+        <div className={styles.contactSection}>
+          <h4>CONTACT</h4>
+          <p>Phone: +1905-830-0413</p>
+          <p>Email: info@equalopp.org</p>
+          <p>Website: www.equalopp.org</p>
+
+          <div>
+                  <img
+                  src={getImageUrl("hero/logo (3).png")} // Replace with your logo's path
+                    alt="Phumlani Dube Foundation Logo"
+                    className={styles.logo}
+                  />
+          </div>
         </div>
 
-        {/* Map Section */}
-        <div className={styles.mapContainer}>
-          <iframe
-            className={styles.map}
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115344.60603212377!2d31.021840!3d-29.858680!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9516f57e0e7b27%3A0x54820b0bc55e1e29!2sDurban%2C%20KwaZulu-Natal%2C%20South%20Africa!5e0!3m2!1sen!2sus!4v1689036499982!5m2!1sen!2sus"            title="Google Maps Location"
-            allowFullScreen=""
-            loading="lazy"
-          ></iframe>
+        {/* Links Section */}
+        <div className={styles.linksSection}>
+          <h4>LINKS</h4>
+          <ul className={styles.linksList}>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Get Involved</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+
+
+
+        </div>
+
+        {/* Sign Up Section */}
+        <div className={styles.signUpSection}>
+          <h4>SIGN UP</h4>
+          <p>Stay connected and join the movement:</p>
+          <div className={styles.emailSignup}>
+            <input type="email" placeholder="Your Email Address" />
+            <button>&gt;</button>
+          </div>
+          <p className={styles.encryptionNote}>* Personal data will be encrypted</p>
+          <div className={styles.socialIcons}>
+            <a href="#"><i className="fab fa-twitter"></i></a>
+            <a href="#"><i className="fab fa-linkedin"></i></a>
+            <a href="#"><i className="fab fa-instagram"></i></a>
+            <a href="#"><i className="fab fa-youtube"></i></a>
+            <a href="#"><i className="fas fa-rss"></i></a>
+          </div>
         </div>
       </div>
-
-      {/* Copyright Section */}
-      <p className={styles.copyright}>
-        © 2023 Phumlani Dube. All rights reserved.
-      </p>
+      <div className={styles.footerBottom}>
+        <p>© Copyright 2019 Equal Opportunity Community Initiative. All Rights Reserved</p>
+        <div className={styles.bottomLinks}>
+          <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
+        </div>
+      </div>
     </footer>
   );
 };

@@ -13,6 +13,7 @@
   .box {
     height: auto; /* Let content define the height */
     border-radius: 2rem;
-    width: 36rem; /* Use a fixed width */
+   margin-left: 10%;
+   margin-right: 10%;
     max-width: 100%; /* Responsive width handling */
   }

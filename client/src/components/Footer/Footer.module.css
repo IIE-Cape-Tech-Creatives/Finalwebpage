@@ -1,52 +1,122 @@
 .footer {
-    background-color: #73b72c;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .footerContent {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px 0;
-  }
-  
-  .addressContainer {
-    text-align: left;
-    flex: 1;
-    padding: 0 20px;
-  }
-  
-  .addressTitle {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  
-  .address {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-  
-  .mapContainer {
-    flex: 1;
-    padding: 0 20px;
-  }
-  
-  .map {
-    width: 100%;
-    height: 200px;
-    border: none;
-    border-radius: 8px;
-  }
-  
-  .copyright {
-    font-size: 14px;
-    margin-top: 20px;
-    text-align: center;
-  }
-  
+  background-color: #e2f7d3;
+  border: 1px solid #73b72c;
+  color: #333;
+  font-family: Arial, sans-serif;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.logo {
+  width: 70%; /* Adjust size as needed */
+  height: auto;
+  object-fit: contain;
+}
+
+
+.footerContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contactSection, .linksSection, .signUpSection {
+  flex: 1;
+  min-width: 250px;
+  padding: 20px;
+  text-align: left;
+}
+
+.contactSection h4, .linksSection h4, .signUpSection h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.linksList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.linksList li {
+  margin-bottom: 8px;
+}
+
+.linksList a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.linksList a:hover {
+  color: #007bff;
+}
+
+.emailSignup {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.emailSignup input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  flex: 1;
+}
+
+.emailSignup button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.emailSignup button:hover {
+  background-color: #0056b3;
+}
+
+.encryptionNote {
+  font-size: 12px;
+  color: #666;
+  margin-top: 10px;
+}
+
+.socialIcons {
+  margin-top: 10px;
+}
+
+.socialIcons a {
+  color: #333;
+  font-size: 18px;
+  margin: 0 8px;
+  text-decoration: none;
+}
+
+.socialIcons a:hover {
+  color: #007bff;
+}
+
+.footerBottom {
+  margin-top: 40px;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.bottomLinks a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.bottomLinks a:hover {
+  color: #007bff;
+}

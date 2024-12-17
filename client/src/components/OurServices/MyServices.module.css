@@ -1,0 +1,82 @@
+/* Container for all services */
+.servicesContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px; /* Space between cards */
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-image: url('./../../../../assets/projects/donate.jpg') ;
+  }
+
+  
+  
+  /* Individual service card */
+  .serviceCard {
+     background: rgba(255, 255, 255, 0.88);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Fixed width for cards */
+    padding: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .serviceCard:hover {
+    transform: scale(1.05); /* Subtle zoom effect on hover */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Service title */
+  .serviceTitle {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  /* Carousel container */
+ .carouselContainer {
+    display: flex;
+    justify-content: center; /* Center the images horizontally */
+    align-items: center; /* Center the images vertically */
+    overflow: hidden;
+    gap: 15px; /* Add spacing between images */
+    margin-bottom: 15px;
+}
+
+/* Individual carousel images */
+.carouselImage {
+    width: 250px; /* Fixed size for images */
+    height: 250px;
+    object-fit: cover; /* Ensure images maintain aspect ratio */
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease-in-out;
+}
+  
+  /* Service description */
+  .serviceDescription {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  
+  /* Call-to-action button */
+  .learnMoreButton {
+    background-color: #6abf4b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .learnMoreButton:hover {
+    background-color: #5aa63b;
+  }
+  

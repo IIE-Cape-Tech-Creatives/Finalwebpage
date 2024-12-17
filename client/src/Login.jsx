@@ -1,7 +1,9 @@
 // src/Login.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navbar } from './components/navbar/Navbar'
+import { AboutUs } from './components/AboutUs/AboutUs';
 import { Hero } from './components/navbar/Hero/Hero'
 import { Upcoming } from './components/navbar/Upcoming/Upcoming'
 import { Experience } from './components/navbar/Experience/Experience'
@@ -44,20 +46,33 @@ const Login = ({ onLogin }) => {
     };
 
     return (
-        <div>
-            <Navbar/>
-            <Hero />   
-            <MissionSection />
-            <Upcoming />
-            <Experience />
-            <UpdatesAndInsights />
-            <Programs/>
-            <SupportersSection />
-            <ContactSection/>
-            <Footer />
+      
+           <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/about-us" element={<AboutUs />} />
+      </Routes>
+      
+      {/* Render other sections only if not on /about-us */}
+      {!isAboutUsPage && (
+        <>
+          <Hero />
+          <MissionSection />
+          <Upcoming />
+          <Experience />
+          <UpdatesAndInsights />
+          <Programs />
+          <SupportersSection />
+          <ContactSection />
+        </>
+      )}
+
+      {/* Footer appears on all pages */}
+      <Footer />
+    </Router>
+            
 
            
-        </div>
     );
 };
 

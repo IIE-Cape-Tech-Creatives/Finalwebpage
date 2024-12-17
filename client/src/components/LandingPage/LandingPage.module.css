@@ -1,0 +1,51 @@
+/* Overall Landing Page Layout */
+.landingPage {
+    display: flex;
+    position: relative;
+    height: 90vh; 
+    z-index: -1;
+  }
+  
+  /* Left Section */
+  .leftSection {
+    flex: 1; /* Takes up half of the screen */
+    background-color:  #baec8e; /* Light gray background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 50%; /* Adjust size as needed */
+    height: auto;
+    object-fit: contain;
+    margin-top: -30%;
+  }
+  
+  /* Right Section */
+  .rightSection {
+    flex: 1; /* Takes up the other half */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+  }
+  
+  .image {
+    flex: 1;
+    height: 90vh; 
+    object-fit:cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Middle Bar (LandingCard) */
+  .landingPage > div:nth-of-type(2)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: transparent;
+  }
+  

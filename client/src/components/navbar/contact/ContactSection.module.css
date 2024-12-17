@@ -16,17 +16,20 @@
 }
 
 .contactHeaderXhosa {
-  color: #000; /* Black text color */
+  
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
   margin: 0;
   font-size: 36px;
-  font-weight: bold;
+  
 }
 
 .contactHeaderEnglish {
   color: #fff; /* White text color */
   font-size: 28px;
-  font-weight: bold;
+  
   margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-top: 10px;
 }
 
@@ -34,6 +37,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  align-items: center; /* Aligns children like input fields to the center */
   margin-top: 20px;
 }
 
@@ -43,7 +47,8 @@
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
-  width: 100%;
+  width: 60%; /* Adjusts width of the fields */
+  text-align: center; /* Ensures text inside the fields is centered */
 }
 
 .textAreaField {
@@ -58,11 +63,10 @@
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
+  width: 60%; /* Optional: Set width for consistency */
 }
 
-.submitButton:hover {
-  background-color: #010300; /* Darker green on hover */
-}
+
 
 .contactInfo {
   margin-top: 20px;

@@ -26,18 +26,7 @@ export const Upcoming = () => {
       description: "An evening to celebrate and thank our wonderful volunteers.",
       image: getImageUrl("events/volunteer-night.jpg"),
     },
-    {
-      date: "2024-12-10",
-      eventName: "Youth Empowerment Workshop",
-      description: "Workshops focused on career guidance and self-development.",
-      image: getImageUrl("events/youth-workshop.jpg"),
-    },
-    {
-      date: "2024-12-15",
-      eventName: "Holiday Giving Drive",
-      description: "Help us spread joy this holiday season by donating essentials.",
-      image: getImageUrl("events/holiday-drive.jpg"),
-    },
+   
   ];
 
   // Fetch posts from the database/API
